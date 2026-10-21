@@ -12,7 +12,7 @@ export default defineAppConfig({
     { label: 'midstride.com', url: 'http://midstride.com' }
   ],
   socialLinks: [
-    { network: 'twitter', url: 'https://twitter.com/andreliem' },
+    { network: 'twitter', url: 'https://twitter.com/tomscreeg' },
     { network: 'linkedin', url: 'https://www.linkedin.com/in/andrekliem/' }
   ],
   /*
