@@ -2,8 +2,8 @@ export default defineAppConfig({
   /*
   ** Site identity — edit these to make it yours
   */
-  siteTitle: 'Site Title Here',
-  siteSubtitle: 'about your blog',
+  siteTitle: '文言和白话复兴',
+  siteSubtitle: '康晓宇的空间',
   authorAvatar: 'http://vuejsradar.com/assets/img/logo2.png',
   customLinks: [
     { label: 'my custom links', url: '#' },
