@@ -16,9 +16,7 @@ export default defineNuxtConfig({
   /*
   ** Modules
   */
-  modules: [
-    '@nuxt/content'
-  ],
+  modules: ['@nuxt/content', "nitro-cloudflare-dev"],
   /*
   ** Markdown rendering + code highlighting
   */
@@ -43,6 +41,13 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true
+    },
+
+    preset: "cloudflare_module",
+
+    cloudflare: {
+      deployConfig: true,
+      nodeCompat: true
     }
   }
 })

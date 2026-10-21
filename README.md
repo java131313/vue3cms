@@ -32,6 +32,30 @@ npm run start
 npm run generate
 ```
 
+## Deployment (Cloudflare Workers)
+
+The site deploys as a Nuxt SSR app on Cloudflare Workers (`cloudflare_module`
+preset). `@nuxt/content` reads posts from a D1 database at runtime and
+self-seeds it from the build-time dump on the first request after each deploy,
+so no manual database migrations are needed.
+
+```bash
+npm run deploy   # nuxt build && wrangler deploy
+```
+
+Prerequisites:
+
+- `npx wrangler login`
+- A D1 database bound as `DB` in `wrangler.toml`
+  (created with `npx wrangler d1 create vue3cms-content`)
+
+Config layout: `nuxt.config.ts` sets the Nitro preset and app code;
+`wrangler.toml` at the project root provides the deployment name, compatibility
+date and the D1 binding — Nitro merges it into the generated
+`.output/server/wrangler.json` during build.
+
+Live site: https://vue3cms.java13131305626.workers.dev
+
 ## Writing posts
 
 Create a new file in `content/posts/` named after your slug:

@@ -17,12 +17,14 @@
 /*
 ** Replaces the old nested `slug` layout: the header (author, date, title)
 ** lives here while the page renders the markdown body into the slot.
-** Shares the `post-<slug>` payload key with pages/[slug].vue.
+** Shares the `post-<slug>` payload key with pages/[slug].vue. The payload
+** envelope covers both build-time (content) and user-authored posts.
 */
 const route = useRoute()
 const { params } = route
 
-const { data: post } = await usePost(String(params.slug))
+const { data } = await usePost(String(params.slug))
+const post = computed(() => data.value?.post || null)
 
 const formattedDate = computed(() => {
   if (!post.value?.date) { return '' }

@@ -10,10 +10,16 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@nuxt/content": "^3.16.0",
+    "better-sqlite3": "^13.0.3",
     "nuxt": "^4.6.0"
+  },
+  "devDependencies": {
+    "nitro-cloudflare-dev": "^0.2.2",
+    "wrangler": "^4.151.3"
   }
 }

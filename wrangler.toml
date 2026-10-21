@@ -1,0 +1,14 @@
+# Project name for the Cloudflare Workers deployment.
+# Nitro (cloudflare_module preset) merges these fields into the generated
+# .output/server/wrangler.json during build; the app code itself is configured
+# in nuxt.config.ts.
+name = "vue3cms"
+compatibility_date = "2025-07-15"
+migrations_dir = "migrations"
+
+# @nuxt/content queries this D1 binding at runtime (self-seeded from the
+# build-time dump on first request).
+[[d1_databases]]
+binding = "DB"
+database_name = "vue3cms-content"
+database_id = "15270c5b-b044-42ce-a3cf-f01c2a7f5cf6"

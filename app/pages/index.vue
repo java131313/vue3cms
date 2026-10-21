@@ -5,10 +5,10 @@
     <hr class="divider">
 
     <section class="recent-posts">
-      <article v-for="post in posts" :key="post.path" class="post">
+      <article v-for="post in posts" :key="post.slug" class="post">
         <time class="created-at" :datetime="post.date">{{ formatDate(post.date) }}</time>
         <h2 class="post-title">
-          <NuxtLink :to="post.path.replace(/^\/posts\//, '/')">{{ post.title }}</NuxtLink>
+          <NuxtLink :to="`/${post.slug}`">{{ post.title }}</NuxtLink>
         </h2>
       </article>
     </section>
